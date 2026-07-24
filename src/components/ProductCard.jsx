@@ -18,6 +18,8 @@ export default function ProductCard({ product }) {
           category={product.category}
           swatch={product.swatch}
           sku={product.sku}
+          image={product.image}
+          name={product.name}
         />
       </Link>
 

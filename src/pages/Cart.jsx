@@ -46,7 +46,13 @@ export default function Cart() {
           {lines.map(({ product, qty }) => (
             <div className="line" key={product.id}>
               <div className="line__media">
-                <ProductVisual category={product.category} swatch={product.swatch} sku={product.sku} />
+                <ProductVisual
+                  category={product.category}
+                  swatch={product.swatch}
+                  sku={product.sku}
+                  image={product.image}
+                  name={product.name}
+                />
               </div>
               <div className="line__info">
                 <Link className="line__name" to={`/product/${product.id}`}>{product.name}</Link>

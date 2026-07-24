@@ -77,6 +77,8 @@ export default function ProductDetails() {
             category={product.category}
             swatch={product.swatch}
             sku={product.sku}
+            image={product.image}
+            name={product.name}
           />
         </div>
 

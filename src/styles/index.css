@@ -357,6 +357,9 @@ button { font: inherit; cursor: pointer; }
   border-bottom: 1px solid var(--line-soft);
 }
 .visual svg { width: 68%; height: auto; }
+.visual--photo { padding: 0; background: var(--surface-2); }
+.visual--photo img { width: 100%; height: 100%; object-fit: cover; }
+
 .visual__sku {
   position: absolute; left: .7rem; bottom: .6rem;
   font-family: var(--mono); font-size: .64rem; letter-spacing: .1em;
