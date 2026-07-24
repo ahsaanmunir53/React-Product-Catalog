@@ -7,6 +7,10 @@ that all survive a page refresh.
 
 ![Home page](screenshots/home.png)
 
+> **New to this codebase?** Read [`GUIDE.md`](GUIDE.md) — a beginner-friendly
+> walkthrough of every file, how the app boots, how to add product photos, and a
+> "where do I change X?" cheat-sheet.
+
 ---
 
 ## Features
