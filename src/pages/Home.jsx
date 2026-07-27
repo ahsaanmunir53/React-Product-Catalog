@@ -7,7 +7,6 @@ import { getCategories } from '../utils/filterProducts';
 export default function Home() {
   useDocumentTitle('Home');
 
-  // Four highest-rated products act as the featured row.
   const featured = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4);
   const categories = getCategories(products).filter((c) => c !== 'All');
 

@@ -4,7 +4,6 @@ import useLocalStorage from '../hooks/useLocalStorage';
 const CartContext = createContext(null);
 
 export function CartProvider({ children }) {
-  // Shape: { [productId]: quantity }
   const [items, setItems] = useLocalStorage('nl.cart', {});
 
   const addItem = (id, qty = 1) =>

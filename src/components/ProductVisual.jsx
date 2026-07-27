@@ -1,18 +1,7 @@
 import { useState } from 'react';
-
-/**
- * Shows the product picture.
- *
- * - If the product has an `image` value in products.json, that photo is shown.
- * - If it doesn't (or the photo fails to load), a drawn schematic is shown
- *   instead, tinted with the product's own `swatch` colour.
- *
- * That means the catalogue always renders something, with or without photos.
- */
 export default function ProductVisual({ category, swatch, sku, image, name }) {
   const [broken, setBroken] = useState(false);
 
-  // ---- Photo path: used as soon as `image` has a value ----
   if (image && !broken) {
     return (
       <div className="visual visual--photo" style={{ '--swatch': swatch }}>
@@ -20,14 +9,13 @@ export default function ProductVisual({ category, swatch, sku, image, name }) {
           src={image}
           alt={name || category}
           loading="lazy"
-          onError={() => setBroken(true)}  // fall back to the drawing
+          onError={() => setBroken(true)} 
         />
         <span className="visual__sku">{sku}</span>
       </div>
     );
   }
 
-  // ---- Fallback path: a simple schematic per category ----
   const shapes = {
     Audio: (
       <>

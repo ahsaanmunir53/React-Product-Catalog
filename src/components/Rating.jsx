@@ -1,6 +1,5 @@
 import { formatRating } from '../utils/format';
 
-/** Five stars with a partial fill, plus the numeric score. */
 export default function Rating({ value, reviews, size = 'sm' }) {
   const pct = (value / 5) * 100;
   return (

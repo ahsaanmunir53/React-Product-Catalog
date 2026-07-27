@@ -15,7 +15,6 @@ const PAGE_SIZE = 8;
 export default function Products() {
   useDocumentTitle('Products');
 
-  // Category can arrive from a link on the home page (?category=Audio).
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [products, setProducts] = useState([]);
@@ -27,8 +26,6 @@ export default function Products() {
 
   const debouncedSearch = useDebounce(search, 200);
 
-  // Load the catalogue. A real build would fetch this; the timeout stands in
-  // for the request so the loading state is exercised.
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
@@ -44,15 +41,14 @@ export default function Products() {
     };
   }, []);
 
-  // Keep the category in the URL so filtered views can be shared.
   useEffect(() => {
     const next = new URLSearchParams(searchParams);
     if (category === 'All') next.delete('category');
     else next.set('category', category);
     setSearchParams(next, { replace: true });
-  }, [category]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [category]);
 
-  // Any filter change starts the list from the first page again.
+
   useEffect(() => {
     setVisible(PAGE_SIZE);
   }, [debouncedSearch, category, sortBy]);

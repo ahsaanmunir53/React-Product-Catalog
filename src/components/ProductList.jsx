@@ -1,7 +1,6 @@
 import ProductCard from './ProductCard';
 import EmptyState from './EmptyState';
 
-/** Renders the grid, or an empty state when nothing matches. */
 export default function ProductList({ products, onReset }) {
   if (!products.length) {
     return (

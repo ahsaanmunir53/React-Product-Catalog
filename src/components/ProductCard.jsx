@@ -5,7 +5,6 @@ import { formatPrice } from '../utils/format';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 
-/** One product tile. Everything it renders arrives through props. */
 export default function ProductCard({ product }) {
   const { addItem } = useCart();
   const { isSaved, toggleSaved } = useWishlist();

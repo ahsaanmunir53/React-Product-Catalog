@@ -1,4 +1,3 @@
-/** Controlled search input. State lives in the Products page. */
 export default function SearchBar({ value, onChange, resultCount }) {
   return (
     <div className="search">

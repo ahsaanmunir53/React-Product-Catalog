@@ -1,7 +1,3 @@
-/**
- * "Load more" pagination. Shows how much of the result set is on screen
- * so the button is never a mystery.
- */
 export default function LoadMore({ shown, total, onLoadMore, step }) {
   if (shown >= total) {
     return total > 0 ? (

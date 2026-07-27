@@ -6,7 +6,6 @@ const ThemeContext = createContext(null);
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useLocalStorage('nl.theme', 'light');
 
-  // The whole palette hangs off this one attribute (see styles/index.css).
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);

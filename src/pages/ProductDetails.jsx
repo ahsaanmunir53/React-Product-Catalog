@@ -19,7 +19,6 @@ export default function ProductDetails() {
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
 
-  // Look the product up whenever the :id segment changes.
   useEffect(() => {
     const found = products.find((p) => String(p.id) === String(id));
     setProduct(found || null);
@@ -29,7 +28,6 @@ export default function ProductDetails() {
     if (found) document.title = `${found.name} | Northline Supply`;
   }, [id]);
 
-  // Clear the "Added" confirmation after a moment.
   useEffect(() => {
     if (!added) return;
     const t = setTimeout(() => setAdded(false), 1800);

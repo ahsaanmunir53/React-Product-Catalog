@@ -1,4 +1,3 @@
-/** Renders one button per category; the active one is highlighted. */
 export default function CategoryFilter({ categories, active, onChange, counts }) {
   return (
     <div className="chips" role="group" aria-label="Filter by category">
